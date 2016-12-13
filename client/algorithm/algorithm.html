@@ -14,11 +14,11 @@
 <!-- Main Algorithim selector div with input form -->
 <div layout="column" ng-controller="AlgorithmController" class="about">
   <md-progress-linear md-mode="indeterminate" ng-show="vm.isLoading"></md-progress-linear>
-  <h2 id="createHeader">Create A Trading Simulation<h2>
+  <h2 class="md-display-2" id="createHeader">Create A Trading Simulation<h2>
     <md-content layout-padding>
       <form name="algoInput">
         <div layout-gt-xs="row">
-          <div flex-gt-xs>
+          <div class="stockSelection">
             <md-input-container>
               <label>Stock</label>
               <input md-minlength="1" md-maxlength="5" required md-no-asterisk name="tick" ng-model="vm.data.ticker">
@@ -31,21 +31,21 @@
               </div>
             </md-input-container>
           </div>
-        </div>
-        <div layout-gt-xs="row">
-          <div flex-gt-xs>
-            <!--<h4>Pick an Algorithm</h4>-->
-            <div layout="row">
-              <md-input-container>
-                <label>Algorithims</label>
-                <md-select ng-model="vm.data.algorithm">
-                  <md-optgroup label="Algorithims">
-                    <md-option ng-value="item" ng-repeat="item in vm.algSelections">{{item}}</md-option>
-                  </md-optgroup>
-                </md-select>
-              </md-input-container>
+          <!--<div layout-gt-xs="row">-->
+            <div>
+              <!--<h4>Pick an Algorithm</h4>-->
+              <div layout="row">
+                <md-input-container>
+                  <label>Algorithims</label>
+                  <md-select ng-model="vm.data.algorithm">
+                    <md-optgroup label="Algorithims">
+                      <md-option ng-value="item" ng-repeat="item in vm.algSelections">{{item}}</md-option>
+                    </md-optgroup>
+                  </md-select>
+                </md-input-container>
+              </div>
             </div>
-          </div>
+          <!--</div>-->
         </div>
         <div layout-gt-xs="row">
           <div class="startDate">

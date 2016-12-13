@@ -4,7 +4,7 @@ var Promise = require("bluebird");
 var apiMethods = require('../worker/index.js');
 
 //---------- function for simulating trading decisions based on predictions ------------
-var simulation =function(prices, predictions, totalAssetValues, cashPosition, sharesOwned, callback) {
+var simulation = function(prices, predictions, totalAssetValues, cashPosition, sharesOwned, callback) {
   if(predictions[0] === 1) { // predicting price rise for tomorrow, therefore go long
     sharesOwned[0] = cashPosition / prices[0];
     cashPosition[0] = 0;
